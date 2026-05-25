@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Auris AI — Meeting Intelligence on Your Phone</title>
+<meta name="description" content="Privacy-first mobile AI note-taker. Record calls and meetings, get structured summaries and action items — entirely on-device. Nothing in the cloud." />
+<style>
+  :root {
+    --midnight: #070D1A;
+    --indigo: #111942;
+    --blue: #2B5CE6;
+    --gold: #EDB430;
+    --ink: #0F172A;
+    --steel: #64748B;
+    --chalk: #F5F7FA;
+    --muted: rgba(255,255,255,0.55);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--midnight); color: #fff; font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  .hero {
+    background:
+      radial-gradient(800px circle at 50% -20%, rgba(237,180,48,0.18), transparent 60%),
+      linear-gradient(158deg, #070D1A 0%, #111942 40%, #1A2456 70%, #1E1A3A 100%);
+    padding: 6rem 1.5rem 4rem;
+    text-align: center;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; }
+  .tag { font-size: 0.7rem; letter-spacing: 2.5px; color: var(--gold); font-weight: 600; }
+  .brand { font-weight: 800; font-size: clamp(3.5rem, 9vw, 5.5rem); letter-spacing: -0.02em; margin: 1rem 0 0.5rem; line-height: 1; }
+  .brand .ai { color: var(--gold); }
+  .pill { display: inline-block; background: rgba(46,125,50,0.18); color: #6ee0a8; font-size: 0.85rem; font-weight: 600; padding: 0.4rem 0.9rem; border-radius: 999px; margin: 1.5rem 0; }
+  .tagline { font-weight: 800; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.1; letter-spacing: -0.02em; margin: 0 0 0.75rem; }
+  .tagline .accent { color: var(--gold); }
+  .sub { color: var(--muted); font-size: 1.1rem; max-width: 520px; margin: 0 auto 3rem; }
+  .stats { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin: 3rem auto 0; max-width: 600px; }
+  .stat { flex: 1 1 140px; padding: 1rem 1.25rem; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; }
+  .stat .val { font-weight: 700; font-size: 1.5rem; color: var(--gold); }
+  .stat .lbl { font-size: 0.75rem; letter-spacing: 0.5px; color: var(--muted); text-transform: uppercase; margin-top: 4px; }
+  .features { background: var(--chalk); color: var(--ink); padding: 4rem 1.5rem; }
+  .feature { background: #fff; border-radius: 16px; padding: 1.5rem 1.75rem; margin-bottom: 1rem; box-shadow: 0 1px 3px rgba(7,13,26,0.06); }
+  .feature h3 { margin: 0 0 0.5rem; font-size: 1.15rem; }
+  .feature p { margin: 0; color: var(--steel); font-size: 0.95rem; }
+  .feature .icon { display: inline-block; width: 36px; height: 36px; border-radius: 10px; background: rgba(43,92,230,0.1); color: var(--blue); text-align: center; line-height: 36px; font-weight: 700; margin-bottom: 0.75rem; }
+  .footer { background: var(--midnight); color: var(--muted); padding: 2.5rem 1.5rem; text-align: center; font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.06); }
+  .footer a { color: #fff; text-decoration: none; margin: 0 0.75rem; }
+  .footer a:hover { color: var(--gold); }
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="wrap">
+    <div class="tag">MEETING INTELLIGENCE</div>
+    <div class="brand">Auris<span class="ai">AI</span></div>
+    <div class="pill">🔒 Your audio never leaves your phone</div>
+    <h1 class="tagline">Clarity from every meeting.<br><span class="accent">Instantly.</span></h1>
+    <p class="sub">Private AI summaries, action items, and client memory — built for professionals on mobile. No bots in your meetings. No audio on someone else's servers.</p>
+    <div class="stats">
+      <div class="stat"><div class="val">30s</div><div class="lbl">First summary</div></div>
+      <div class="stat"><div class="val">100%</div><div class="lbl">On-device AI</div></div>
+      <div class="stat"><div class="val">∞</div><div class="lbl">Client memory</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="features">
+  <div class="wrap">
+    <div class="feature">
+      <div class="icon">✦</div>
+      <h3>Capture any meeting</h3>
+      <p>Record live, upload an audio file, or dictate notes. Auris transcribes locally and surfaces the structure of the conversation — summary, key points, and action items assigned to you or your client.</p>
+    </div>
+    <div class="feature">
+      <div class="icon">⌥</div>
+      <h3>Action Intelligence Engine</h3>
+      <p>Not just a transcript. Auris extracts what needs to happen next — assigned by owner, tagged by urgency, ready to check off. The first note-taker that turns a meeting into a to-do list automatically.</p>
+    </div>
+    <div class="feature">
+      <div class="icon">✉</div>
+      <h3>One-tap follow-up email</h3>
+      <p>Generates a professional client recap email from the meeting — subject, summary, action items, next steps. The 30-minute post-meeting writeup, done in seconds.</p>
+    </div>
+    <div class="feature">
+      <div class="icon">◐</div>
+      <h3>Client memory that compounds</h3>
+      <p>Every call adds to a per-client intelligence profile. Open a client and see open action items, recurring themes, key context — a relationship CRM built from your real conversations.</p>
+    </div>
+    <div class="feature">
+      <div class="icon">⌗</div>
+      <h3>100% on-device. Architecturally.</h3>
+      <p>Whisper transcription and on-device LLM summarization run entirely on your phone. No audio servers. No cloud transcripts. Verifiable, not just marketed.</p>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <a href="/privacy">Privacy</a> · <a href="/support">Support</a> · <a href="mailto:support@masdineroventures.com">Contact</a>
+  <div style="margin-top:1rem;">© 2026 Mas Dinero Ventures LLC</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Support — Auris AI</title>
+<meta name="description" content="Auris AI support — recording, transcription, action items, follow-ups, on-device AI, privacy." />
+<style>
+  :root { --midnight:#070D1A; --blue:#2B5CE6; --gold:#EDB430; --ink:#0F172A; --steel:#64748B; --chalk:#F5F7FA; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--chalk); color: var(--ink); font: 16px/1.65 -apple-system, BlinkMacSystemFont, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 4rem 1.5rem; }
+  .brand { font-weight: 800; font-size: 1.5rem; margin-bottom: 2rem; }
+  .brand a { color: var(--ink); text-decoration: none; }
+  .brand .ai { color: var(--gold); }
+  h1 { font-size: clamp(1.8rem, 5vw, 2.5rem); margin: 0 0 2rem; letter-spacing: -0.01em; }
+  h2 { font-size: 1.2rem; margin: 2.5rem 0 0.5rem; }
+  p, li { color: #2c2c2c; }
+  ul, ol { padding-left: 1.5rem; }
+  code { background: rgba(0,0,0,0.06); padding: 0.1rem 0.4rem; border-radius: 4px; font-size: 0.9em; }
+  footer { border-top: 1px solid rgba(0,0,0,0.08); margin-top: 4rem; padding-top: 2rem; text-align: center; color: var(--steel); font-size: 0.9rem; }
+  footer a { color: var(--ink); text-decoration: none; margin: 0 0.75rem; }
+  .contact-box { background: #fff; border-radius: 16px; padding: 1.5rem; margin-top: 2.5rem; box-shadow: 0 1px 3px rgba(7,13,26,0.06); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand"><a href="/">Auris<span class="ai">AI</span></a></div>
+  <h1>Support</h1>
+
+  <h2>Where do my recordings and transcripts live?</h2>
+  <p>On your phone. Audio recordings are processed by on-device Whisper, then deleted automatically within 30 minutes of transcription. The resulting transcript and summary are stored locally in encrypted on-device storage. Auris has no servers for your meeting data — there's nothing for us to lose, leak, or sell.</p>
+
+  <h2>How do I record a meeting?</h2>
+  <ol>
+    <li>Tap the blue mic button at the bottom of any tab.</li>
+    <li>Choose <strong>Record a call</strong>, <strong>Upload audio file</strong>, or <strong>Speak notes</strong>.</li>
+    <li>When the call ends, tap stop. Auris transcribes locally and shows you a structured summary in about 30 seconds for a short meeting.</li>
+  </ol>
+
+  <h2>How does Auris know what's an action item?</h2>
+  <p>After transcription, an on-device language model reads the conversation and pulls out commitments, follow-ups, decisions, and promises — assigning each to either you or the client, with an urgency rating. You can edit any of them, mark them complete, or add your own. Everything happens on your device.</p>
+
+  <h2>How do I get my data out?</h2>
+  <p>Settings → Export gives you a complete copy of your meetings, action items, and clients in a portable format. Send it to yourself, archive it, import it into another tool — your choice. The export never touches our servers.</p>
+
+  <h2>How do I delete everything?</h2>
+  <p>Settings → Privacy → <strong>Wipe Auris</strong>. Two taps. Every recording, transcript, action item, and client is removed from your device. No "cooling-off period" — it's your phone, it's your data.</p>
+
+  <h2>Subscription questions</h2>
+  <ul>
+    <li><strong>Cancel:</strong> App Store: Settings → Subscriptions → Auris AI → Cancel. Android: Play Store → Subscriptions → Auris AI → Cancel.</li>
+    <li><strong>Refund:</strong> We follow Apple's and Google's standard refund policies. Contact them directly for refund requests.</li>
+    <li><strong>Restore on a new device:</strong> Open Auris → Settings → <strong>Restore purchases</strong> — your Pro entitlement comes back automatically.</li>
+  </ul>
+
+  <h2>"My summary looks incomplete."</h2>
+  <p>For very long meetings (45+ minutes), transcription is processed in chunks and may take longer. If the summary is missing key sections, tap <strong>Regenerate</strong> on the meeting summary screen — the on-device model gets a second pass at the transcript with refined prompts.</p>
+
+  <h2>"The AI model is downloading slowly."</h2>
+  <p>Auris's on-device language model is a one-time download (about 650 MB on v1.0) and happens in the background after onboarding. Download pauses automatically if your battery is below 20% or you're on cellular — connect to WiFi or power up to resume. While the download finishes, basic features work; the full AI unlocks once it completes.</p>
+
+  <h2>Recording laws — please read</h2>
+  <p>Recording conversations is regulated differently around the world. <strong>You are responsible for complying with the recording laws in your jurisdiction and for obtaining any required consent from meeting participants.</strong> When in doubt, ask the other party for permission before recording.</p>
+
+  <h2>Privacy policy</h2>
+  <p><a href="/privacy">aurisai.app/privacy</a></p>
+
+  <div class="contact-box">
+    <h2 style="margin-top:0;">Contact</h2>
+    <p><a href="mailto:support@masdineroventures.com">support@masdineroventures.com</a></p>
+    <p style="margin-bottom:0; color: var(--steel);">We're a small operation. Replies usually arrive within 1–2 business days.</p>
+  </div>
+
+  <footer>
+    <a href="/">Home</a> · <a href="/privacy">Privacy</a>
+    <div style="margin-top:1rem;">© 2026 Mas Dinero Ventures LLC</div>
+  </footer>
+</div>
+</body>
+</html>
