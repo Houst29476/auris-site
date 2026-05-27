@@ -30,7 +30,7 @@
 <div class="wrap">
   <div class="brand"><a href="/">Auris<span class="ai">AI</span></a></div>
   <h1>Privacy Policy</h1>
-  <p class="updated">Last updated: May 25, 2026 · Applies to Auris AI v1.0 on iOS and Android</p>
+  <p class="updated">Last updated: May 27, 2026 · Applies to Auris AI v1.0 on iOS and Android</p>
 
   <h2>The short version</h2>
   <p><strong>Your audio recordings and transcripts stay on your device.</strong> Auris has no servers for your meeting data. Transcription, summarization, action-item extraction, and follow-up email drafting all happen locally on your phone via on-device AI models. We do not collect, sell, share, or fingerprint your meeting content. We have nothing to lose, leak, or hand over.</p>
@@ -51,7 +51,7 @@
       <tr><td>Photos</td><td>No</td><td>Photo library access is requested only when you choose to import an existing business card image. The image is processed on-device and not retained.</td></tr>
       <tr><td>Location</td><td>No</td><td>Auris never requests or accesses your location.</td></tr>
       <tr><td>Usage analytics</td><td>No</td><td>No event tracking is enabled in v1.0. No third-party analytics SDK is installed.</td></tr>
-      <tr><td>Crash diagnostics</td><td>No</td><td>No crash reporting SDK is installed in v1.0. Crash logs are visible only to you via the in-app error log.</td></tr>
+      <tr><td>Crash diagnostics</td><td>Yes (scrubbed)</td><td>If Auris crashes, a report is sent to Sentry so we can fix the bug. Reports contain stack trace, app version, OS version, and device model. An explicit forbidden-keys scrub strips any meeting content, transcript, client name, audio path, or financial value before the report leaves the device. Retained by Sentry for 30 days, then auto-deleted.</td></tr>
       <tr><td>Advertising identifiers</td><td>No</td><td>Auris shows no ads and does not request the Apple IDFA or Google AAID.</td></tr>
       <tr><td>Anonymous subscription identifier</td><td>Yes</td><td>RevenueCat receives a random anonymous ID per install and your subscription tier (monthly / annual / none) so the app can unlock Pro features. Never linked to your name, email, or any personal data.</td></tr>
       <tr><td>Purchase receipt</td><td>Yes</td><td>Apple App Store and Google Play receive payment from you and send a receipt to RevenueCat. We receive only the entitlement status. We never see your payment method, billing address, or other financial details.</td></tr>
@@ -67,11 +67,12 @@
   <p>Neither model communicates with a server during inference. Your meeting content is never sent to OpenAI, Meta, or any other party. We can verify this by inspecting the network behavior of the app — and so can you, with any network monitoring tool.</p>
 
   <h2>Third-party services</h2>
-  <p>Auris uses one third-party service for billing:</p>
+  <p>Auris uses two third-party services:</p>
   <ul>
-    <li><strong>RevenueCat</strong> — handles subscription receipts and entitlement validation. Receives only the anonymous identifier and subscription tier. RevenueCat's privacy policy: <a href="https://www.revenuecat.com/privacy" rel="noopener">https://www.revenuecat.com/privacy</a>.</li>
+    <li><strong>RevenueCat</strong> — subscription receipts and entitlement validation. Receives only the anonymous identifier and subscription tier. Privacy policy: <a href="https://www.revenuecat.com/privacy" rel="noopener">revenuecat.com/privacy</a>.</li>
+    <li><strong>Sentry</strong> — crash and diagnostic reporting. Receives only scrubbed crash reports as described in the table above. No meeting content, client data, or audio ever reaches Sentry. Privacy policy: <a href="https://sentry.io/privacy/" rel="noopener">sentry.io/privacy</a>.</li>
   </ul>
-  <p>Auris does <strong>not</strong> use any analytics, ad networks, A/B testing tools, crash reporters, or marketing attribution SDKs in v1.0.</p>
+  <p>Auris does <strong>not</strong> use any analytics SDKs, ad networks, A/B testing tools, or marketing attribution SDKs.</p>
 
   <h2>Your rights</h2>
   <ul>
@@ -95,7 +96,7 @@
   <p>Auris AI is published by Mas Dinero Ventures LLC.</p>
 
   <footer>
-    <a href="/">Home</a> · <a href="/support">Support</a> · <a href="mailto:support@masdineroventures.com">Contact</a>
+    <a href="/auris-site/">Home</a> · <a href="/auris-site/support/">Support</a> · <a href="/auris-site/terms/">Terms</a> · <a href="mailto:support@masdineroventures.com">Contact</a>
     <div style="margin-top:1rem;">© 2026 Mas Dinero Ventures LLC</div>
   </footer>
 </div>
