@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Privacy Policy — Auris AI</title>
-<meta name="description" content="Auris AI privacy policy. Audio recordings and transcripts stay on your device. We don't collect, sell, or share your meeting data." />
+<meta name="description" content="Auris AI privacy policy. Audio recordings stay on your device. Transcripts stay on your device by default; Pro users can opt in to Cloud Intelligence for OpenAI summarization." />
 <style>
   :root { --midnight:#070D1A; --blue:#2B5CE6; --gold:#EDB430; --ink:#0F172A; --steel:#64748B; --chalk:#F5F7FA; }
   * { box-sizing: border-box; }
@@ -30,12 +30,16 @@
 <div class="wrap">
   <div class="brand"><a href="/">Auris<span class="ai">AI</span></a></div>
   <h1>Privacy Policy</h1>
-  <p class="updated">Last updated: May 27, 2026 · Applies to Auris AI v1.0 on iOS and Android</p>
+  <p class="updated">Last updated: June 6, 2026 · Applies to Auris AI v1.0 on iOS and Android</p>
 
   <h2>The short version</h2>
-  <p><strong>Your audio recordings and transcripts stay on your device.</strong> Auris has no servers for your meeting data. Transcription, summarization, action-item extraction, and follow-up email drafting all happen locally on your phone via on-device AI models. We do not collect, sell, share, or fingerprint your meeting content. We have nothing to lose, leak, or hand over.</p>
+  <p><strong>Your audio recordings stay on your device. Your transcripts stay on your device by default.</strong> Auris is on-device by default. Transcription, summarization, action-item extraction, and follow-up email drafting all happen locally on your phone via on-device AI models. We do not collect, sell, share, or fingerprint your meeting content.</p>
 
-  <p>The one exception is your subscription status, which is processed by Apple or Google and relayed through RevenueCat strictly so the app knows whether you have Pro features unlocked. Details below.</p>
+  <p>Two exceptions, both opt-in:</p>
+  <ul>
+    <li>Your <strong>subscription status</strong>, processed by Apple or Google and relayed through RevenueCat strictly so the app knows whether you have Pro features unlocked.</li>
+    <li><strong>Cloud Intelligence</strong> — an optional Pro feature that sends the meeting transcript text (never your audio) to OpenAI's GPT-4 API for a sharper summary. Off by default; explicit one-time in-app confirmation required. See the dedicated section below.</li>
+  </ul>
 
   <h2>What we collect — and don't collect</h2>
 
@@ -44,8 +48,8 @@
       <tr><th>Category</th><th>Collected?</th><th>Notes</th></tr>
     </thead>
     <tbody>
-      <tr><td>Audio recordings</td><td>No</td><td>Recordings are saved to your device's local storage. They are processed by on-device Whisper transcription and then automatically deleted within 30 minutes. No copy is transmitted off your device at any point.</td></tr>
-      <tr><td>Meeting transcripts</td><td>No (off-device)</td><td>Transcripts and summaries are stored locally in encrypted on-device storage. They are never uploaded, never indexed by us, and never seen by anyone other than you.</td></tr>
+      <tr><td>Audio recordings</td><td>No</td><td>Recordings are saved to your device's local storage. They are processed by on-device Whisper transcription and then automatically deleted within 30 minutes. No copy is transmitted off your device at any point, in any mode.</td></tr>
+      <tr><td>Meeting transcripts</td><td>No by default; Yes if you opt in to Cloud Intelligence</td><td>Transcripts and summaries are stored locally in encrypted on-device storage. In the default mode they are never uploaded. If you explicitly opt in to Cloud Intelligence (Pro tier), the transcript text is sent to OpenAI's GPT-4 API for that summary operation only, under OpenAI's zero-retention policy. Audio is never sent in any mode. See the Cloud Intelligence section below.</td></tr>
       <tr><td>Client names, contacts, notes</td><td>No</td><td>The client list, business cards you scan, and any notes you add are stored locally. We don't sync them to a cloud.</td></tr>
       <tr><td>Calendar data</td><td>No</td><td>If you grant calendar permission, Auris reads your upcoming events only to surface pre-meeting context. The data never leaves your device.</td></tr>
       <tr><td>Photos</td><td>No</td><td>Photo library access is requested only when you choose to import an existing business card image. The image is processed on-device and not retained.</td></tr>
@@ -61,16 +65,30 @@
   <h2>On-device AI</h2>
   <p>Auris uses two on-device AI models:</p>
   <ul>
-    <li><strong>Whisper</strong> (OpenAI's open-source speech recognition model) for transcription. Runs locally via the whisper.rn library on your phone's CPU/GPU. Audio is processed in memory and never transmitted.</li>
+    <li><strong>Whisper</strong> (OpenAI's open-source speech recognition model) for transcription. Runs locally via the whisper.rn library on your phone's CPU/GPU. Audio is processed in memory and never transmitted, in any mode.</li>
     <li><strong>Llama</strong> (Meta's open-source language model) for summarization, action item extraction, and follow-up email generation. Runs locally via the llama.rn library. The model file is downloaded once on first launch and stored in your app's sandbox.</li>
   </ul>
-  <p>Neither model communicates with a server during inference. Your meeting content is never sent to OpenAI, Meta, or any other party. We can verify this by inspecting the network behavior of the app — and so can you, with any network monitoring tool.</p>
+  <p>In the default on-device mode, neither model communicates with a server during inference and your meeting content never leaves your device — you can verify this with any network monitoring tool. If you opt in to Cloud Intelligence (Pro tier, off by default), the meeting transcript text is sent to OpenAI's GPT-4 API for that one operation; audio is never sent in any mode. See the Cloud Intelligence section below for the full flow.</p>
+
+  <h2>Cloud Intelligence (Pro tier, opt-in only)</h2>
+  <p>Pro subscribers can optionally enable <strong>Cloud Intelligence</strong>, which sends the meeting transcript text — never your audio — to <strong>OpenAI's GPT-4 API</strong> via our backend proxy (auris-api on Vercel) to generate a sharper summary. Cloud Intelligence is:</p>
+  <ul>
+    <li><strong>Off by default.</strong> You must explicitly turn it on in Settings.</li>
+    <li><strong>Confirmed by a one-time in-app dialog</strong> the first time you enable it, identifying OpenAI as the recipient.</li>
+    <li><strong>Per-meeting visible.</strong> Every meeting card and detail header shows an ON-DEVICE / CLOUD badge.</li>
+    <li><strong>Reversible at any time.</strong> Switch it off and Auris falls back to on-device only.</li>
+    <li><strong>Capped at 10 cloud-summarized meetings per calendar month.</strong></li>
+  </ul>
+  <p><strong>What OpenAI receives:</strong> Only the meeting transcript text, sent over HTTPS to OpenAI's GPT-4 API, when you have Cloud Intelligence enabled.</p>
+  <p><strong>How OpenAI processes it:</strong> Under OpenAI's <a href="https://openai.com/policies/api-data-usage-policies/" rel="noopener">zero-retention API policy</a>. They do not store, log, or train on your transcripts.</p>
+  <p><strong>What we keep:</strong> No transcripts, summaries, audio, or PII are stored on our servers. The auris-api proxy only authenticates the request against your RevenueCat Pro entitlement and forwards to OpenAI.</p>
 
   <h2>Third-party services</h2>
-  <p>Auris uses two third-party services:</p>
+  <p>Auris uses three third-party services:</p>
   <ul>
     <li><strong>RevenueCat</strong> — subscription receipts and entitlement validation. Receives only the anonymous identifier and subscription tier. Privacy policy: <a href="https://www.revenuecat.com/privacy" rel="noopener">revenuecat.com/privacy</a>.</li>
     <li><strong>Sentry</strong> — crash and diagnostic reporting. Receives only scrubbed crash reports as described in the table above. No meeting content, client data, or audio ever reaches Sentry. Privacy policy: <a href="https://sentry.io/privacy/" rel="noopener">sentry.io/privacy</a>.</li>
+    <li><strong>OpenAI</strong> — GPT-4 summarization, only when you opt in to Cloud Intelligence (Pro tier, off by default). Receives only the meeting transcript text under OpenAI's zero-retention API policy. See the Cloud Intelligence section above for the full flow. Privacy policy: <a href="https://openai.com/policies/api-data-usage-policies/" rel="noopener">openai.com/policies/api-data-usage-policies</a>.</li>
   </ul>
   <p>Auris does <strong>not</strong> use any analytics SDKs, ad networks, A/B testing tools, or marketing attribution SDKs.</p>
 
@@ -88,7 +106,7 @@
   <p>Auris is not directed at children under 13 (or the equivalent minimum age in your jurisdiction). We do not knowingly collect data from children.</p>
 
   <h2>Changes to this policy</h2>
-  <p>If we ever add a feature that changes what data is collected — for example, turning on analytics or cloud-based transcription — we will update this page, update the App Store and Google Play privacy disclosures, and update the in-app Privacy screen in the same release. The most recent revision date is shown at the top of this page.</p>
+  <p>If we ever add a feature that changes what data is collected — for example, turning on analytics or expanding cloud-based processing — we will update this page, update the App Store and Google Play privacy disclosures, and update the in-app Privacy screen in the same release. The most recent revision date is shown at the top of this page.</p>
 
   <h2>Contact</h2>
   <p>Questions about this policy or how Auris handles data: <a href="mailto:support@masdineroventures.com">support@masdineroventures.com</a></p>
